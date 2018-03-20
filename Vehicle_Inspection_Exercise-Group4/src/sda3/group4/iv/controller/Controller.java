@@ -4,6 +4,8 @@ import java.util.List;
 import sda3.group4.iv.integration.CarRegistry;
 import sda3.group4.iv.integration.CashRegistry;
 import sda3.group4.iv.integration.InspectionChecklist;
+import sda3.group4.iv.integration.PaymentAuthorisation;
+import sda3.group4.iv.integration.Printer;
 import sda3.group4.iv.model.Garage;
 import sda3.group4.iv.model.QueueNumberDisplay;
 
@@ -18,6 +20,8 @@ public class Controller {
     CarRegistry carRegistry;
     CashRegistry cashRegistry;
     InspectionChecklist inspectionList;
+    PaymentAuthorisation authorisation;
+    Printer printer;
 
         /**
          * Creates a new instance.
@@ -29,6 +33,8 @@ public class Controller {
         carRegistry = new CarRegistry();
         cashRegistry = new CashRegistry();
         inspectionList = new InspectionChecklist();
+        authorisation = new PaymentAuthorisation();
+        printer = new Printer();
     }
 
     /**
@@ -92,5 +98,11 @@ public class Controller {
         int price = 0;
         price = cashRegistry.calculateCost(inspectionList.getInspectionChecklist(regNo));
     return price;
+    }
+
+    public void payByCreditCard(String creditCard, int price) {
+        if (authorisation.authorizePayment(creditCard, price)) {
+            printer.printReceipt(price);
+        }
     }
 }

@@ -15,8 +15,8 @@ public class Printer {
     /**
      * Creates a formatted string with the entire content of the receipt.
      */
-    public void printReceipt(){
-
+    public void printReceipt(int price){
+        System.out.println("Payment sucessfull!" + price);
     }
 
 }

@@ -26,21 +26,32 @@ public class View {
 
         controller = new Controller();
         controller.startInspection();
+        
+        print("Please enter vehicle reistration number");
         String regNo = getUserInput();
+        
         while (true){
             if(controller.checkRegistrationNumber(regNo)){
-                System.out.println("Valid registration number");
+               print("Valid registration number");
                break;
             } else {
-                System.out.println("Invalid registration number...Please try again");
+                print("Invalid registration number...Please try again");
             }
         }
         int price = controller.getPrice(regNo);
         System.out.println("The prise for your check up is: " + price);
-        }
-
+        System.out.println("Please enter your credit card number: ");
+        String creditCard = getUserInput();
+        controller.payByCreditCard(creditCard, price);
+            
+    }   
+    
     public String getUserInput(){
-        System.out.println("Please enter vehicle regNo: ");
         return scanner.nextLine();
     }
+
+    public void print(String message){
+    System.out.println(message);
+    }
 }
+  
