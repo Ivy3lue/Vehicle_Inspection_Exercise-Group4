@@ -11,9 +11,7 @@ public class CashRegistry {
 
      }
      public int calculateCost(List inspectionList){
-
-         return 0;
-
+         return 350;
      }
 
      public int calculateChange(int price, int amount){

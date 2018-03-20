@@ -17,18 +17,20 @@ public class View {
 
     public void startSystem(){
 
-        boolean flag = true;
         controller = new Controller();
         controller.startInspection();
-        while (flag){
-            if(controller.checkRegistrationNumber(getUserInput())){
+        String regNo = getUserInput();
+        while (true){
+            if(controller.checkRegistrationNumber(regNo)){
                 System.out.println("Valid registration number");
-                flag = false;
+               break;
             } else {
                 System.out.println("Invalid registration number...Please try again");
             }
         }
-    }
+        int price = controller.getPrice(regNo);
+        System.out.println("The prise for your check up is: " + price);
+        }
 
     public String getUserInput(){
         System.out.println("Please enter vehicle regNo: ");

@@ -15,5 +15,4 @@ public class CarRegistry {
         }
         return false;
     }
-
 }
