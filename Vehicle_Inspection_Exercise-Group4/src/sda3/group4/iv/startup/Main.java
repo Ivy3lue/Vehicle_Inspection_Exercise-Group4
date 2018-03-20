@@ -17,7 +17,4 @@ public class Main {
         view = new View();
         view.startSystem();
     }
-
-
-
 }

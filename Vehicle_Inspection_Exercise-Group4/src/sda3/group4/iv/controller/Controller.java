@@ -2,6 +2,8 @@ package sda3.group4.iv.controller;
 
 import java.util.List;
 import sda3.group4.iv.integration.CarRegistry;
+import sda3.group4.iv.integration.CashRegistry;
+import sda3.group4.iv.integration.InspectionChecklist;
 import sda3.group4.iv.model.Garage;
 import sda3.group4.iv.model.QueueNumberDisplay;
 
@@ -13,7 +15,9 @@ public class Controller {
 
     QueueNumberDisplay queueNoDisplay;
     Garage garage;
-    CarRegistry registry;
+    CarRegistry carRegistry;
+    CashRegistry cashRegistry;
+    InspectionChecklist inspectionList;
 
         /**
          * Creates a new instance.
@@ -22,9 +26,9 @@ public class Controller {
 
         queueNoDisplay = new QueueNumberDisplay();
         garage = new Garage();
-        registry = new CarRegistry();
-
-
+        carRegistry = new CarRegistry();
+        cashRegistry = new CashRegistry();
+        inspectionList = new InspectionChecklist();
     }
 
     /**
@@ -35,6 +39,7 @@ public class Controller {
         garage.open();
         garage.close();
     }
+
 
     public void payCash(){
 
@@ -72,8 +77,7 @@ public class Controller {
      */
     public boolean checkRegistrationNumber(String regNo){
 
-        return registry.validateRegistrationNumber(regNo);
-
+        return carRegistry.validateRegistrationNumber(regNo);
     }
 
     /**
@@ -82,7 +86,11 @@ public class Controller {
      */
     public void showResult(List inspectionResult){
 
-
     }
 
+    public int getPrice(String regNo){
+        int price = 0;
+        price = cashRegistry.calculateCost(inspectionList.getInspectionChecklist(regNo));
+    return price;
+    }
 }

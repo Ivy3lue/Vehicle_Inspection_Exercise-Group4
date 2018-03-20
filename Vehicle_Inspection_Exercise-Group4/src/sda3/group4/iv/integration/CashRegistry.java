@@ -22,9 +22,7 @@ public class CashRegistry {
       * @return The amount to be paid.
       */
      public int calculateCost(List inspectionList){
-
-         return 0;
-
+         return 350;
      }
 
      /**
