@@ -9,28 +9,6 @@ import org.junit.Test;
 
 public class CarRegistryTest {
 
-    public CarRegistryTest() {
-    }
-
-    @BeforeClass
-    public static void setUpClass() {
-    }
-
-    @AfterClass
-    public static void tearDownClass() {
-    }
-
-    @Before
-    public void setUp() {
-    }
-
-    @After
-    public void tearDown() {
-    }
-
-    /**
-     * Test of validateRegistrationNumber method, of class CarRegistry.
-     */
     @Test
     public void testValidateRegistrationNumberEmptyString() {
         String regNo = "";
@@ -38,8 +16,6 @@ public class CarRegistryTest {
         boolean expResult = false;
         boolean result = instance.validateRegistrationNumber(regNo);
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
 
     @Test
@@ -49,8 +25,6 @@ public class CarRegistryTest {
         boolean expResult = false;
         boolean result = instance.validateRegistrationNumber(regNo);
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
 
     @Test
@@ -60,8 +34,5 @@ public class CarRegistryTest {
         boolean expResult = true ;
         boolean result = instance.validateRegistrationNumber(regNo);
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
-
 }

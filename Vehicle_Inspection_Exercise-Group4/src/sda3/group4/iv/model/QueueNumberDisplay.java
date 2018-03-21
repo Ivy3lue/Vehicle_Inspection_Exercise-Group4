@@ -18,9 +18,12 @@ public class QueueNumberDisplay {
      * Increments the queue number display.
      */
     public void incrementQueueNumberDisplay(){
-
         queueNo++;
         System.out.println("Next inspection: " + queueNo);
 
         }
+    
+    public int getQueueNo(){
+        return queueNo;
+    }
 }

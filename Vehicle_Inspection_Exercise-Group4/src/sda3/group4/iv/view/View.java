@@ -18,7 +18,7 @@ public class View {
     public View(){
         scanner = new Scanner(System.in);
     }
-
+    
     /**
      * Takes the user input to start the system.
      */

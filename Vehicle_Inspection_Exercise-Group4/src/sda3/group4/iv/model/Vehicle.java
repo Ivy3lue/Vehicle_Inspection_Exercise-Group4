@@ -31,4 +31,5 @@ public class Vehicle {
         inspectionChecklist.add("Gear box");
         return inspectionChecklist;
     }
-}
+    
+ }
