@@ -25,25 +25,50 @@ public class View {
     public void startSystem(){
 
         controller = new Controller();
-        controller.startInspection();
-        String regNo = getUserInput();
+        controller.callNextCustomer();
+
+        String regNo = "";
+
         while (true){
+
+            print("Please enter vehicle reistration number");
+            regNo = getUserInput();
+
             if(controller.checkRegistrationNumber(regNo)){
-                System.out.println("Valid registration number");
+               print("");
+               print("Valid registration number");
                break;
             } else {
-                System.out.println("Invalid registration number...Please try again");
+                print("");
+                print("Invalid registration number...");
             }
         }
-        int price = controller.getPrice(regNo);
-        System.out.println("The prise for your check up is: " + price);
-        }
 
+        int price = controller.getPrice(regNo);
+
+        print("");
+        print("The prise for your check up is: " + price);
+        print("Please enter your credit card number: ");
+
+        String creditCard = getUserInput();
+
+        if (!controller.payByCreditCard(creditCard, price)){
+            print("");
+            print("Invalid credit card...");
+        } else {
+            controller.startInspection();
+        }
+        controller.manipulateGarageDoor();
+    }
+    
     /**
      * Takes the user input.
      */
     public String getUserInput(){
-        System.out.println("Please enter vehicle regNo: ");
         return scanner.nextLine();
+    }
+
+    public void print(String message){
+        System.out.println(message);
     }
 }

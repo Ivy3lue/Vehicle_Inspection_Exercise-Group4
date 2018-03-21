@@ -3,12 +3,15 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package sda3.group4.iv.controller;
+package sda3.group4.iv.integration;
 
 /**
  *
  * @author tmp-sda-1194
  */
-class nullPointerException {
+public class PaymentAuthorisation {
+    public boolean authorizePayment(String creditCardNo, int amount) {
+       return true;
     
+    }
 }
