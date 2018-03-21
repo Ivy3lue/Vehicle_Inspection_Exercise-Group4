@@ -2,36 +2,17 @@ package sda3.group4.iv.integration;
 
 import java.util.ArrayList;
 import java.util.List;
-import org.junit.After;
-import org.junit.AfterClass;
 import static org.junit.Assert.*;
 import org.junit.Before;
-import org.junit.BeforeClass;
 import org.junit.Test;
 
 public class InspectionChecklistTest {
 
-    private InspectionChecklist instance;
-
-    public InspectionChecklistTest() {
-        instance = new InspectionChecklist();
-    }
-
-    @BeforeClass
-    public static void setUpClass() {
-
-    }
-
-    @AfterClass
-    public static void tearDownClass() {
-    }
+    InspectionChecklist instance;
 
     @Before
-    public void setUp() {
-    }
-
-    @After
-    public void tearDown() {
+    public void SetUp(){
+        instance = new InspectionChecklist();
     }
 
     @Test
