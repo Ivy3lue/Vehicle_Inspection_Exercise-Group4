@@ -88,6 +88,11 @@ public class Controller {
 
     }
 
+    /**
+     * Returns price for inspections to be made.
+     * @param regNo The string registration number to be checked.
+     * @return The amount needed to be paid. 
+     */
     public int getPrice(String regNo){
         int price = 0;
         price = cashRegistry.calculateCost(inspectionList.getInspectionChecklist(regNo));

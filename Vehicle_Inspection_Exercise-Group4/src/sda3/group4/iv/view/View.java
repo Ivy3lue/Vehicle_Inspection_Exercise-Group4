@@ -39,6 +39,9 @@ public class View {
         System.out.println("The prise for your check up is: " + price);
         }
 
+    /**
+     * Takes the user input.
+     */
     public String getUserInput(){
         System.out.println("Please enter vehicle regNo: ");
         return scanner.nextLine();
